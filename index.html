@@ -15,30 +15,26 @@
             width: 100%;
             height: 100%;
             overflow: hidden;
-            background-color: #171717; /* 全体になじむダーク背景 */
-        }
-        /* チャット画面の表示領域 */
-        .chat-container {
-            width: 100%;
-            height: 100vh;
-            will-change: transform;
+            background-color: #171717;
         }
         iframe {
             width: 100%;
             height: 100%;
             border: none;
             display: block;
+            /* ハードウェアアクセラレーションを有効化して描画を滑らかにする */
+            transform: translateZ(0);
+            backface-visibility: hidden;
+            perspective: 1000px;
         }
     </style>
 </head>
 <body>
 
-    <div class="chat-container">
-        <iframe
-          src="https://udify.app/chat/mPgVLVub61o0rbhD"
-          allow="microphone;clipboard-write">
-        </iframe>
-    </div>
+    <iframe
+      src="https://udify.app/chat/mPgVLVub61o0rbhD"
+      allow="microphone;clipboard-write">
+    </iframe>
 
 </body>
 </html>
